@@ -62,4 +62,3 @@ spec:
     port: 80
     targetPort: 8081
     nodePort: {{ .Values.kraken.registry_port }}
-  externalTrafficPolicy: Local
