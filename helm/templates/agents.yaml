@@ -21,7 +21,7 @@ spec:
     spec:
       {{ with .Values.agent.tolerations -}}
       tolerations:
-{{ toYaml . | indent 6 }}
+{{ toYaml . | indent 8 }}
       {{- end -}}
       {{ with .Values.agent.initContainers -}}
       initContainers:
