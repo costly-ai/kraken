@@ -19,10 +19,15 @@ spec:
 {{ tpl . $ | indent 8 -}}
       {{- end }}
     spec:
-      {{ with .Values.agent.tolerations -}}
       tolerations:
-{{ toYaml . | indent 8 }}
-      {{- end -}}
+        - effect: NoSchedule
+          key: dedicated
+          operator: Equal
+          value: gpu-large
+        - effect: NoSchedule
+          key: dedicated
+          operator: Equal
+          value: gpu
       {{ with .Values.agent.initContainers -}}
       initContainers:
 {{ toYaml . | indent 6 -}}
